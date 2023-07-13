@@ -31,8 +31,6 @@ function ObserverReactQuery() {
 
   const lastPostRef = useCallback((post: HTMLDivElement | null) => {
 
-    console.log(isFetchingNextPage, !hasNextPage)
-
     // если уже загружаем пост ничего не делаем
     if (isFetchingNextPage || !hasNextPage) return
 

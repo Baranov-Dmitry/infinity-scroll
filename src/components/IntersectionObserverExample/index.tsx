@@ -19,8 +19,6 @@ function IntersectionObserverExample() {
 
   const lastPostRef = useCallback((post: HTMLDivElement | null) => {
 
-    console.log("lastPostRef", post)
-
     // если уже загружаем пост ничего не делаем
     if (isLoading || !hasNextPage) return
 
@@ -29,7 +27,6 @@ function IntersectionObserverExample() {
 
     // объявляем обзервер и передаем функцию которая вызоветься при срабатывании
     intObserver.current = new IntersectionObserver((posts) => {
-      console.log(posts)
       if (posts[0].isIntersecting) {
         console.log('We are near the last post!')
         setPageNum(prev => prev + 1)
